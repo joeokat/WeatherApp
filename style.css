@@ -1,17 +1,42 @@
 :root {
   --bg-color: #212121;
-  --white: #f6f6f6;
-  --heading: #ffbb1c;
+  --heading: #101010;
+  --sub-heading: #565656;
+  --text: #f6f6f6;
+  --accent: #ffbb1c;
+
+  --medium: font-weight: 500;
+  --bold: font-weight: 700;
 }
 
 .body {
-  font-family: "space-grotesk", Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   background-color: var(--bg-color);
-  color: var(--white);
+  color: var(--text);
   margin: 0;
+
 }
 
-.header {
-  font-size: ;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  height: 32px;
+  padding: 24px;
+  color: var(--heading);
+  background-color: var(--accent);
+}
+
+.navbar.logo {
+  font-size: 1.3rem;
+  font-weight: var(--bold);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--heading);
+  font-size: 1.3rem;
+  
 }
