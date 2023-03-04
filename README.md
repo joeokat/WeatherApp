@@ -1,2 +1,2 @@
-# RandomQuoteMachine
+# Frontend Mentor Challenge 1
  

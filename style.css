@@ -1,0 +1,17 @@
+:root {
+  --bg-color: #212121;
+  --white: #f6f6f6;
+  --heading: #ffbb1c;
+}
+
+.body {
+  font-family: "space-grotesk", Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+  color: var(--white);
+  margin: 0;
+}
+
+.header {
+  font-size: ;
+}
