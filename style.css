@@ -126,3 +126,9 @@ body {
   font-size: 28px;
   margin-top: -6px;
 }
+
+.error,
+.weather,
+.details {
+  display: none;
+}

@@ -33,7 +33,9 @@
         >
           <button><img src="assets/search.png" /></button>
         </input>
+        
       </div>
+      <p class="error">City or country is invalid</p>
 <!--Weather-->
       <div class="weather">
         <img src="assets/clear.png" class="weather-icon">
@@ -63,37 +65,48 @@
 </html>
 
 <script>
-  //model
 const apiKey = '12ee5c937152789cba2749727cb2d98a';
 const apiUrl = 'http://api.openweathermap.org/data/2.5/weather?units=metric&q=';
 const city = apiUrl;
 
+const searchBox = document.querySelector(".searchbox input");
+const searchBtn = document.querySelector(".searchbox button");
+const weatherIcon = document.querySelector(".weather-icon");
+
 async function checkWeather(city) {
   const res = await fetch(apiUrl + city + `&appid=${apiKey}`);
+
+  if (res.status == 404) {
+    document.querySelector(".error").style.display = "block";
+    document.querySelector(".weather").style.display = "block";
+    document.querySelector(".details").style.display = "block";
+  }
+
   let data = await res.json();
   
-  temp();
-  citi();
-  humidity();
-  wind();
+  document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + '°C';
+  document.querySelector(".city").innerHTML = data.name;
+  document.querySelector(".humidity").innerHTML = data.main.humidity + '%';
+  document.querySelector(".wind").innerHTML = data.wind.speed + ' km/h';
+
+  if (data.weather[0].main == "Clouds") {
+weatherIcon.src = "assets/clouds.png";
+} else if (data.weather[0].main == "Snow") {
+weatherIcon.src = "assets/snow.png";
+} else if (data.weather[0].main == "Mist") {
+weatherIcon.src = "assets/mist.png";
+} else if (data.weather[o].main == "Drizzle") {
+  weatherIcon.src = "assets/drizzle.png";
+} else if (data.weather[0].main == "Rain") {
+  weatherIcon.src = "assets/rain.png";
+} else {
+  weatherIcon.src = "assests/clear.png";
 }
 
-checkWeather();
+}
 
-  //view
-const temp = () => {
-  document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + '°C';
-};
-const citi = () => {
-  document.querySelector(".city").innerHTML = data.name;
-};
-const humidity = () => {
-  document.querySelector(".humidity").innerHTML = data.main.humidity + '%';
-};
-const wind = () => {
-  document.querySelector(".wind").innerHTML = data.wind.speed + ' km/h';
-};
-
-  //controller
+searchBtn.addEventListener("click", () => {
+  checkWeather(searchBox.value);
+})
 
 </script>
