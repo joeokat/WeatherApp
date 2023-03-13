@@ -98,11 +98,11 @@ async function checkWeather(city) {
     weatherIcon.src = "assets/snow.png";
     } else if (data.weather[0].main == "Mist") {
     weatherIcon.src = "assets/mist.png";
-    } else if (data.weather[o].main == "Drizzle") {
+    } else if (data.weather[0].main == "Drizzle") {
       weatherIcon.src = "assets/drizzle.png";
     } else if (data.weather[0].main == "Rain") {
       weatherIcon.src = "assets/rain.png";
-    } else {
+    } else if(data.weather[0].main == "Clear") {
       weatherIcon.src = "assests/clear.png";
     }
     
