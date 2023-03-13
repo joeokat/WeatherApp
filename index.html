@@ -31,8 +31,8 @@
           placeholder="Search city or country"
           spellcheck="false"
         >
-        <button><img src="assets/search.png" /></button>
-      </input>
+          <button><img src="assets/search.png" /></button>
+        </input>
       </div>
 <!--Weather-->
       <div class="weather">
@@ -43,21 +43,20 @@
       <!--Details-->
       <div class="details">
         <div class="col">
-<img src="assets/humidity.png">
-<div>
-  <p class="humidity">00</p>
-  <p>Humidity</p>
-</div>
+          <img src="assets/humidity.png">
+          <div>
+            <p class="humidity">00</p>
+            <p>Humidity</p>
+        </div>
 
         </div>
-<div class="col">
-<img src="assets/wind.png">
-<div>
-  <p class="wind">00</p>
-<p>Wind Speed</p>
-</div>
-</div>
-
+          <div class="col">
+          <img src="assets/wind.png">
+          <div>
+            <p class="wind">00</p>
+          <p>Wind Speed</p>
+          </div>
+          </div>
       </div>
     </main>
   </body>
@@ -72,6 +71,6 @@ const city = apiUrl;
 async function checkWeather(city) {
   const res = await fetch(apiUrl + city `&${apiKey}`);
   let data = await res.json();
-}
+};
   //controller
 </script>
