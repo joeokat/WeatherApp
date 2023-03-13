@@ -20,58 +20,109 @@
   --transition: color 250ms ease-in-out;
 }
 
-/* html {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-size: 100%;
+  font-family: "Space Grotesk", sans-serif;
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-} */
 
 body {
   margin: 0;
-  font-family: "Space Grotesk", sans-serif;
   background-color: var(--bg-color);
-  color: var(--body-text);
+  color: var(--head-text);
   font-size: var(--s18);
   line-height: 1.56;
 }
 
-header,
-main {
-  display: flex;
-  justify-content: space-between;
-  width: calc(100% -2rem);
-  max-width: var(--container);
-  margin-inline: auto;
+.logo {
+  margin-top: 40px;
+  text-align: center;
 }
 
-/* Header */
-.logo {
-  display: flex;
+.card {
+  width: 80%;
+  max-width: 470px;
+  background: linear-gradient(135deg, #ffbb1c, #ff6f5b);
+  color: var(--body-text);
+  margin: 30px auto 0;
+  padding: 40px 35px;
+  border-radius: 20px;
+  text-align: center;
 }
 
 .searchbox {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  background: var(--body-text);
+  border-radius: 30px;
 }
 
-footer {
-  background-color: var(--footer-color);
-  color: var(--body-text);
-  font-size: 1rem;
-  line-height: 1.56;
-  display: flex;
-  justify-content: center;
-  padding: var(--s18);
-  max-width: 100%;
+.searchbox input {
+  outline: 0;
+  border: 0;
+  flex: 1;
+  background: var(--body-text);
+  color: var(--footer-color);
+  padding: 0px 25px;
+  height: 60px;
+  border-radius: 50px;
+  font-size: 18px;
 }
 
-.address {
+.searchbox button {
+  border: 0;
+  outline: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--body-text);
+}
+
+.searchbox button img {
+  width: 18px;
+}
+
+.weather-icon {
+  width: 110px;
+  margin-top: 30px;
+}
+
+.weather h1 {
+  font-size: 70px;
+  font-weight: 500;
+}
+
+.weather h2 {
+  font-size: 45px;
+  font-weight: 300;
+  margin-top: -10px;
+}
+
+.details {
   display: flex;
-  gap: var(--s32);
-  text-decoration: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 50px;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.col img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.humidity,
+.wind {
+  font-size: 28px;
+  margin-top: -6px;
 }

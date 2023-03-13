@@ -16,21 +16,48 @@
     <title>WeatherApp.js</title>
   </head>
   <body>
-    <!--Navbar-->
+    <!--Challenge-->
     <header>
       <nav>
-        <h1 class="logo">Nyhira Search</h1>
+        <!-- <h1 class="logo">Weather Application</h1> -->
       </nav>
     </header>
-    <!--SearchBox-->
-    <main>
+    <!--Card-->
+    <main class="card">
+      <!--SearchBox-->
       <div class="searchbox">
         <input
           type="text"
           placeholder="Search city or country"
           spellcheck="false"
-        />
-        <button></button>
+        >
+        <button><img src="assets/zoom.svg" /></button>
+      </input>
+      </div>
+<!--Weather-->
+      <div class="weather">
+        <img src="assets/bx-wind.svg" class="weather-icon">
+        <h1 class="temp">22*c</h1>
+        <h2 class="city">Accra</h2>
+      </div>
+      <!--Details-->
+      <div class="details">
+        <div class="col">
+<img src="assets/bxs-cloud-lightning.svg">
+<div>
+  <p class="humidity">00</p>
+  <p>Humidity</p>
+</div>
+
+        </div>
+<div class="col">
+<img src="assets/bx-wind.svg">
+<div>
+  <p class="wind">00</p>
+<p>Wind Speed</p>
+</div>
+</div>
+
       </div>
     </main>
   </body>
@@ -38,8 +65,13 @@
 
 <script>
   //model
-
+const apiKey = '';
+const apiUrl = '';
+const city = apiUrl;
   //view
-
+async function checkWeather(city) {
+  const res = await fetch(apiUrl + city `&${apiKey}`);
+  let data = await res.json();
+}
   //controller
 </script>
